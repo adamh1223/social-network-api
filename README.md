@@ -69,3 +69,5 @@ Link to Github Repository:
 https://github.com/adamh1223/social-network-api
 
 Link to video demonstration:
+
+https://vimeo.com/989317224?share=copy
