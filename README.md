@@ -11,7 +11,7 @@ This is an API for a social network web application where users can share their 
 - [Usage](#usage)
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
-- [Links](#link-to-github-repository)
+- [Links](#links)
 
 ## Installation
 
