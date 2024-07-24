@@ -4,7 +4,7 @@ module.exports = {
   // Get all users
   getUsers(req, res) {
     User.find()
-      .then((users) => res.json(users))
+      .then((users) => res.status(200).json(users))
       .catch((err) => res.status(500).json(err));
   },
   // Get a single user by ID
@@ -16,14 +16,14 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No user found with that ID" })
-          : res.json(user)
+          : res.status(200).json(user)
       )
       .catch((err) => res.status(500).json(err));
   },
   // Create a new user
   createUser(req, res) {
     User.create(req.body)
-      .then((user) => res.json(user))
+      .then((user) => res.status(200).json(user))
       .catch((err) => res.status(500).json(err));
   },
   // Update a user by ID
@@ -36,7 +36,7 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No user found with that ID" })
-          : res.json(user)
+          : res.status(200).json(user)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -49,7 +49,7 @@ module.exports = {
           : Thought.deleteMany({ _id: { $in: user.thoughts } })
       )
       .then(() =>
-        res.json({ message: "User and associated thoughts deleted!" })
+        res.status(200).json({ message: "User and associated thoughts deleted!" })
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -63,7 +63,7 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No user found with that ID" })
-          : res.json(user)
+          : res.status(200).json(user)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -77,7 +77,7 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No user found with that ID" })
-          : res.json(user)
+          : res.status(200).json(user)
       )
       .catch((err) => res.status(500).json(err));
   },

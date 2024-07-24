@@ -4,7 +4,7 @@ module.exports = {
   // Get all thoughts
   getThoughts(req, res) {
     Thought.find()
-      .then((thoughts) => res.json(thoughts))
+      .then((thoughts) => res.status(200).json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
   // Get a single thought by ID
@@ -13,7 +13,7 @@ module.exports = {
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought found with that ID" })
-          : res.json(thought)
+          : res.status(200).json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -34,7 +34,7 @@ module.exports = {
               .json({
                 message: "Thought created, but found no user with that ID",
               })
-          : res.json("Created the thought")
+          : res.status(200).json("Created the thought")
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -48,7 +48,7 @@ module.exports = {
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought found with that ID" })
-          : res.json(thought)
+          : res.status(200).json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -71,7 +71,7 @@ module.exports = {
               .json({
                 message: "Thought deleted but no user found with this ID",
               })
-          : res.json({ message: "Thought successfully deleted" })
+          : res.status(200).json({ message: "Thought successfully deleted" })
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -85,7 +85,7 @@ module.exports = {
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought found with that ID" })
-          : res.json(thought)
+          : res.status(200).json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -99,7 +99,7 @@ module.exports = {
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought found with that ID" })
-          : res.json(thought)
+          : res.status(200).json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
